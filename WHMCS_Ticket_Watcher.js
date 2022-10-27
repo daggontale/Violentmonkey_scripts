@@ -3,9 +3,9 @@
 // @namespace   https://github.com/daggontale/Violentmonkey_scripts
 // @match       https://support.i7media.com/nv79/supporttickets.php
 // @grant       none
-// @version     2.1
+// @version     2.2
 // @author      Joey Stombaugh
-// @description Creates a node on the side of the screen displaying all forums with new threads
+// @description Highlights new tickets and notifies window after 1 minute.
 // ==/UserScript==
 
 // The constant definitions are in all caps just to help with case sensitivity.
