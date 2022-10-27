@@ -69,6 +69,3 @@ console.log(MATCHING_TICKETS)
 if (MATCHING_TICKETS.length > 0) {
 	setTimeout(() => { alert('New Tickets') }, 60000);
 }
-
-// just a different test
-console.log("Hello, world! AAAAAAAAAAAHHHHHHHHHHHHHHHHHHHH");
