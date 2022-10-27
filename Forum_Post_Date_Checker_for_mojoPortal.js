@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        Post Date Checker for mojoPortal.com
-// @namespace   https://github.com/daggontale/ViolentMonkey-Scripts/blob/main/Post_Date_Checker_for_mojoPortal.com.js
+// @namespace   https://github.com/daggontale/Violentmonkey_scripts
 // @match       https://www.mojoportal.com/forums*
 // @grant       none
 // @license     MIT

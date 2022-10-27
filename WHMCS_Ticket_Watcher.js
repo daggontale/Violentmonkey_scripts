@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        WHMCS Ticket Watcher
-// @namespace   https://github.com/daggontale/WHMCS-Ticket-Watcher/blob/main/WHMCS_Ticket_Watcher.js
+// @namespace   https://github.com/daggontale/Violentmonkey_scripts
 // @match       https://support.i7media.com/nv79/supporttickets.php
 // @grant       none
 // @version     2.1
@@ -36,11 +36,11 @@ function createTicketObj(ticketNode) {
 		lastReply: parseLastReply(ticketNode.childNodes[6].innerText),
 		status: ticketNode.childNodes[5].textContent.toUpperCase().trim()
 	};
-};
+}
 
 function ticketFilter(ticketObject) {
 	return (!BLACKLIST?.includes(ticketObject.id) && STATUS_LIST.includes(ticketObject.status) && DEPARTMENT_LIST.includes(ticketObject.dept));
-};
+}
 
 const MATCHING_TICKETS = Array.from(document.querySelectorAll('[id*="sortabletbl"] > tbody > tr:not(:first-child)'))
 	.map(x => createTicketObj(x))
