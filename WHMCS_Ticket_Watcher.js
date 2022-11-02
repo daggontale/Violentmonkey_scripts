@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        WHMCS Ticket Watcher
-// @namespace   https://github.com/daggontale/WHMCS-Ticket-Watcher/blob/main/WHMCS_Ticket_Watcher.js
+// @namespace   https://github.com/daggontale/Violentmonkey_scripts
 // @match       https://support.i7media.com/nv79/supporttickets.php
 // @grant       none
 // @version     2.3
