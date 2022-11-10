@@ -21,10 +21,6 @@ const BLACKLIST = JSON.parse(localStorage.getItem('ticketBlacklist', '[]'))?.map
 
 // Functions --------------------------------------------------------------------------------------------------------------------------------------------
 
-if (localStorage.getItem('ticketBlacklist')) {
-  localStorage.setItem('ticketBlacklist', '[]');
-}
-
 function ticketBlacklistTab(adminTabNodeList) {
   const blacklistCache = JSON.parse(localStorage.getItem('ticketBlacklist', '[]'));
   const newTab = document.createElement('li');
@@ -187,6 +183,10 @@ const blacklistInput = document.querySelector('#input-blacklist');
 const blacklistButton = document.querySelector('#btn-blacklist');
 const showBlacklistButton = document.querySelector('#btn-show-blacklist');
 const blacklistTabTable = document.querySelector('#blacklistTabTable');
+
+if (localStorage.getItem('ticketBlacklist')) {
+  localStorage.setItem('ticketBlacklist', '[]');
+}
 
 removeOldTickets();
 
