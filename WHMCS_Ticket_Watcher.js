@@ -3,7 +3,7 @@
 // @namespace   https://github.com/daggontale/Violentmonkey_scripts
 // @match       https://support.i7media.com/nv79/supporttickets.php
 // @grant       none
-// @version     2.4
+// @version     2.5
 // @author      Joey Stombaugh
 // @description Highlights new tickets and notifies window after 1 minute.
 // ==/UserScript==
