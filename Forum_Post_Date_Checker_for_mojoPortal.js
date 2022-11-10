@@ -10,7 +10,7 @@
 // ==/UserScript==
 
 // Variables
-var DATE_BLACKLIST = ["10/30/2022", "11/1/2022"];
+var DATE_BLACKLIST = [];
 
 // Functions
 
@@ -43,7 +43,7 @@ function createNotificationNode(timeRefreshed, displayArr) {
 // Code
 
 const style = document.createElement('style');
-style.innerHTML = '.card{position:fixed;top:50%;transform:translate(0,-50%);right:10px;border:1px solid gray;border-radius:5px;max-width:200px;background-color: aliceblue}.card__time{font-size:larger;text-align:center;border-bottom:1px solid gray;padding:5px 5px 3px}.card__body{padding:5px}';
+style.innerHTML = '.card{position:fixed;top:50%;transform:translate(0,-50%);right:10px;border:1px solid gray;border-radius:5px;max-width:175px;background-color: aliceblue}.card__time{font-size:larger;text-align:center;border-bottom:1px solid gray;padding:5px 5px 3px}.card__body{padding:5px}';
 document.head.appendChild(style);
 
 const dateElementNodeList = document.querySelectorAll('.fpostdate');
