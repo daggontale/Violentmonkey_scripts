@@ -4,7 +4,7 @@
 // @match       https://www.mojoportal.com/forums*
 // @grant       none
 // @license     MIT
-// @version     1.2
+// @version     1.3
 // @author      Joey Stombaugh
 // @description Checks mojoportal forums for a new post and notifies if so
 // ==/UserScript==
