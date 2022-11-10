@@ -4,7 +4,7 @@
 // @match       https://www.mojoportal.com/forums*
 // @grant       none
 // @license     MIT
-// @version     1.0
+// @version     1.2
 // @author      Joey Stombaugh
 // @description Checks mojoportal forums for a new post and notifies if so
 // ==/UserScript==
@@ -75,5 +75,9 @@ datesFromYesterdayArray.forEach(x => currentPosts.push(`New Post to <strong>${x.
 datesFromThisWeekArray.forEach(x => currentPosts.push(`New Post to <strong>${x.title}</strong> in the past week. (${x.date.toLocaleDateString()})`));
 
 createNotificationNode(refreshTime, currentPosts);
+
+if (currentPosts.length != 0) {
+	window.alert('New Posts!')
+}
 
 setTimeout(() => { location.reload() }, 1800000);
