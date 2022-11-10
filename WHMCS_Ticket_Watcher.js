@@ -17,14 +17,14 @@ const STATUS_LIST = ["CUSTOMER-REPLY", "OPEN"];
 const DEPARTMENT_LIST = ["TECHNICAL SUPPORT"];
 
 // Add tickets to the blacklist via the custom ticket blacklist tab on the webpage.
-const BLACKLIST = JSON.parse(localStorage.getItem('ticketBlacklist') ?? '[]')?.map(x => x.ticketId);
+const BLACKLIST = JSON.parse(localStorage.getItem('ticketBlacklist') ?? '[]');
 
 // ###################
 // #### Functions ####
 // ###################
 
 function ticketBlacklistTab(adminTabNodeList) {
-  const blacklistCache = JSON.parse(localStorage.getItem('ticketBlacklist') ?? '[]');
+  const blacklistCache = BLACKLIST;
   const newTab = document.createElement('li');
 
   newTab.innerHTML = `<a class="tab-top" href="#tab${adminTabNodeList[0].childElementCount + 1}" role="tab" data-toggle="tab" id="tabLink${adminTabNodeList[0].childElementCount + 1}" data-tab-id="${adminTabNodeList[0].childElementCount + 1}">Ticket Blacklist</a>`;
@@ -142,13 +142,13 @@ function getDayDifference(date, days) {
 }
 
 function removeOldTickets() {
-  const filteredTickets = JSON.parse(localStorage.getItem('ticketBlacklist') ?? '[]')
+  const filteredTickets = BLACKLIST
     .filter(x => getDayDifference(x.timeAdded, -5));
   localStorage.setItem('ticketBlacklist', JSON.stringify(filteredTickets));
 }
 
 function removeTicketFromBlacklist(id) {
-  const filteredTickets = JSON.parse(localStorage.getItem('ticketBlacklist') ?? '[]')
+  const filteredTickets = BLACKLIST
     .filter(x => !(x.ticketId === id));
   localStorage.setItem('ticketBlacklist', JSON.stringify(filteredTickets));
 }
@@ -172,7 +172,7 @@ function createTicketObj(ticketNode) {
 };
 
 function ticketFilter(ticketObject) {
-	return (!BLACKLIST?.includes(ticketObject.id) && STATUS_LIST.includes(ticketObject.status) && DEPARTMENT_LIST.includes(ticketObject.dept));
+	return (!BLACKLIST.map(x => x.ticketId)?.includes(ticketObject.id) && STATUS_LIST.includes(ticketObject.status) && DEPARTMENT_LIST.includes(ticketObject.dept));
 };
 
 // ##############
