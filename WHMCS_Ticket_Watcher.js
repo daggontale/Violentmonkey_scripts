@@ -3,7 +3,7 @@
 // @namespace   https://github.com/daggontale/Violentmonkey_scripts
 // @match       https://support.i7media.com/nv79/supporttickets.php
 // @grant       none
-// @version     2.3
+// @version     2.4
 // @author      Joey Stombaugh
 // @description Highlights new tickets and notifies window after 1 minute.
 // ==/UserScript==
@@ -54,7 +54,7 @@ function ticketBlacklistTab(adminTabNodeList) {
       localStorage.ticketBlacklist = JSON.stringify(blacklistCache);
     }
   })
-  
+
   const showList = document.createElement('button');
   showList.textContent = 'Show Blacklist';
   showList.classList = 'btn btn-primary btn-sm';
