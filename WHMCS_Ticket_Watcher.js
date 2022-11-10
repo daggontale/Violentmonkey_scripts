@@ -19,7 +19,9 @@ const DEPARTMENT_LIST = ["TECHNICAL SUPPORT"];
 // Add tickets to the blacklist via the custom ticket blacklist tab on the webpage.
 const BLACKLIST = JSON.parse(localStorage.getItem('ticketBlacklist') ?? '[]')?.map(x => x.ticketId);
 
-// Functions --------------------------------------------------------------------------------------------------------------------------------------------
+// ###################
+// #### Functions ####
+// ###################
 
 function ticketBlacklistTab(adminTabNodeList) {
   const blacklistCache = JSON.parse(localStorage.getItem('ticketBlacklist') ?? '[]');
@@ -173,7 +175,9 @@ function ticketFilter(ticketObject) {
 	return (!BLACKLIST?.includes(ticketObject.id) && STATUS_LIST.includes(ticketObject.status) && DEPARTMENT_LIST.includes(ticketObject.dept));
 };
 
-// Code --------------------------------------------------------------------------------------------------------------------------------------------
+// ##############
+// #### Code ####
+// ##############
 
 const adminTabs = document.querySelectorAll('.admin-tabs');
 
